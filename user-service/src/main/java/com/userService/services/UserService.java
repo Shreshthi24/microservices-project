@@ -1,6 +1,6 @@
 package com.userService.services;
 
-import com.ratingService.entity.Rating;
+import com.userService.external.entities.Rating;
 import com.userService.entity.User;
 import com.userService.feignClients.HotelService;
 import com.userService.feignClients.RatingService;

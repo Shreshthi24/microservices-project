@@ -1,6 +1,6 @@
 package com.userService.entity;
 
-import com.ratingService.entity.Rating;
+import com.userService.external.entities.Rating;
 import jakarta.persistence.*;
 import lombok.*;
 
