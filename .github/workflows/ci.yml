@@ -18,17 +18,21 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Debug (optional)
+      - name: Show Project Structure
+        run: ls -R
+
       - name: Build Auth Service
         run: |
-          cd auth-service/auth-service
-          mvn clean install -DskipTests
+          chmod +x auth-service/mvnw
+          ./auth-service/mvnw -f auth-service/pom.xml clean install -DskipTests
 
       - name: Build Email Service
         run: |
-          cd email-service/email-service
-          mvn clean install -DskipTests
+          chmod +x email-service/mvnw
+          ./email-service/mvnw -f email-service/pom.xml clean install -DskipTests
 
       - name: Build API Gateway
         run: |
-          cd api-gateway/api-gateway
-          mvn clean install -DskipTests
+          chmod +x api-gateway/mvnw
+          ./api-gateway/mvnw -f api-gateway/pom.xml clean install -DskipTests
