@@ -20,15 +20,15 @@ jobs:
 
       - name: Build Auth Service
         run: |
-          cd auth-service
+          cd auth-service/auth-service
           mvn clean install -DskipTests
 
       - name: Build Email Service
         run: |
-          cd email-service
+          cd email-service/email-service
           mvn clean install -DskipTests
 
       - name: Build API Gateway
         run: |
-          cd api-gateway
+          cd api-gateway/api-gateway
           mvn clean install -DskipTests
