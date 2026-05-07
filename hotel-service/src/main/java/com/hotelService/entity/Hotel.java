@@ -16,9 +16,10 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
     private String name;
     private String location;
+
+
 
 
 }

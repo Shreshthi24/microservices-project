@@ -1,8 +1,8 @@
 package com.authService.service;
 
-import com.authService.dto.*;
+import com.authService.dto.LoginRequest;
+import com.authService.dto.RegisterRequest;
 import com.authService.entity.AuthUser;
-
 import com.authService.kafka.AuthKafkaProducer;
 import com.authService.repositories.AuthRepository;
 import com.authService.security.JwtUtil;
@@ -29,6 +29,7 @@ public class AuthService {
     public AuthUser register(RegisterRequest request) {
 
         AuthUser user = new AuthUser();
+
         user.setEmail(request.getEmail());
         user.setPassword(encoder.encode(request.getPassword()));
         user.setRole("USER");
@@ -55,7 +56,7 @@ public class AuthService {
         String successEvent = user.getEmail() + "|SUCCESS|LOGIN";
         kafkaProducer.sendAuthEvent(successEvent);
 
-        // GENERATE TOKEN
+        // GENERATE JWT TOKEN
         return jwtUtil.generateToken(user.getEmail());
     }
 }

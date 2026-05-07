@@ -19,7 +19,7 @@ public class Rating {
 
     private String userId;   // ✅ MUST ADD THIS
     private String hotelId;
-    private int ratings;
+    private int rating;
     private String feedback;
 
     @Transient
